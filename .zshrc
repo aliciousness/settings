@@ -2,7 +2,7 @@ export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -88,7 +88,24 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git zsh-autosuggestions zsh-syntax-highlighting aws terraform python pip docker docker-compose colored-man-pages ansible aliases copypath history python pip ssh-agent thefuck
+    git 
+    # zsh-autosuggestions 
+    # zsh-syntax-highlighting 
+    aws 
+    terraform 
+    python 
+    pip 
+    docker 
+    docker-compose 
+    colored-man-pages 
+    ansible 
+    aliases 
+    copypath 
+    history 
+    python 
+    pip 
+    ssh-agent 
+    thefuck
 )
 
 
