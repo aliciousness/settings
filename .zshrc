@@ -14,6 +14,7 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -102,8 +103,8 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git 
-    # zsh-autosuggestions 
-    # zsh-syntax-highlighting 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting 
     aws 
     terraform 
     python 
@@ -122,6 +123,18 @@ plugins=(
 )
 
 
+
+
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+# zstyle :omz:plugins:ssh-agent helper ksshaskpass
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/bitbucket
+
+# zstyle :omz:plugins:ssh-agent lazy yes
+# zstyle :omz:plugins:ssh-agent lifetime 4h
+# zstyle :omz:plugins:ssh-agent quiet yes
+# zstyle :omz:plugins:ssh-agent ssh-add-args -K -c -a /run/user/1000/ssh-auth
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\uE0B0"
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs )
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
@@ -134,16 +147,6 @@ plugins=(
 # POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
 # POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
 # POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
-
-zstyle :omz:plugins:ssh-agent agent-forwarding yes
-# zstyle :omz:plugins:ssh-agent helper ksshaskpass
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/bitbucket
-
-# zstyle :omz:plugins:ssh-agent lazy yes
-# zstyle :omz:plugins:ssh-agent lifetime 4h
-# zstyle :omz:plugins:ssh-agent quiet yes
-# zstyle :omz:plugins:ssh-agent ssh-add-args -K -c -a /run/user/1000/ssh-auth
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -212,3 +215,4 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
