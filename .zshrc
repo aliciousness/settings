@@ -22,10 +22,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="intika"
 # ZSH_THEME="amuse"
 # ZSH_THEME="arrow"
-# ZSH_THEME="aussiegeek"
+ZSH_THEME="aussiegeek"
 # ZSH_THEME="jonathan"
 # ZSH_THEME="juanghurtado"
 # ZSH_THEME="nanotech"
@@ -33,7 +32,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="re5et"
 # ZSH_THEME="terminalparty"
 # ZSH_THEME="peepcode"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # BUG
 
