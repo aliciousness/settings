@@ -37,7 +37,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # BUG
 
-# font not set on ansible server https://github.com/romkatv/powerlevel10k#getting-started
+################# POWERLEVEL10K - https://github.com/romkatv/powerlevel10k#getting-started
 
 
 # Set list of themes to pick from when loading at random
@@ -123,11 +123,13 @@ plugins=(
 )
 
 
+################# AUTO SUGGESTION https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 
+################# SYNTAC-highlighting https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
 # zstyle :omz:plugins:ssh-agent helper ksshaskpass
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/bitbucket
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/alpine_github
 
 # zstyle :omz:plugins:ssh-agent lazy yes
 # zstyle :omz:plugins:ssh-agent lifetime 4h
