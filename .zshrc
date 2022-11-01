@@ -24,7 +24,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="amuse"
 # ZSH_THEME="arrow"
-ZSH_THEME="aussiegeek"
+# ZSH_THEME="aussiegeek"
 # ZSH_THEME="jonathan"
 # ZSH_THEME="juanghurtado"
 # ZSH_THEME="nanotech"
@@ -34,7 +34,8 @@ ZSH_THEME="aussiegeek"
 # ZSH_THEME="peepcode"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# BUG
+ZSH_THEME="random"
+ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "amuse" "arrow" "aussiegeek" "jonathan" "juanghurtado" "nanotech" "nicoulaj" "re5et" "terminalparty" "peepcode" "powerlevel10k/powerlevel10k")
 
 ################# POWERLEVEL10K - https://github.com/romkatv/powerlevel10k#getting-started
 
