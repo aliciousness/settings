@@ -1,8 +1,8 @@
-#### These need to be cloned for all features to be enabled, there are the links 
+#### These need to be cloned for all features to be enabled, there are the links as well as the link to the cheat sheet for oh-my-zsh
 ################# AUTO SUGGESTION https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 ################# POWERLEVEL10K - https://github.com/romkatv/powerlevel10k#getting-started
 ################# SYNTAC-highlighting https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-
+################# https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet CHEATSHEET
 ###########################################################################################################################################
 
 
