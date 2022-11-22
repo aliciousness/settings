@@ -1,3 +1,11 @@
+#### These need to be cloned for all features to be enabled, there are the links 
+################# AUTO SUGGESTION https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+################# POWERLEVEL10K - https://github.com/romkatv/powerlevel10k#getting-started
+################# SYNTAC-highlighting https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
+###########################################################################################################################################
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -34,10 +42,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="peepcode"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
-ZSH_THEME="random"
-ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "amuse" "arrow" "aussiegeek" "jonathan" "juanghurtado" "nanotech" "nicoulaj" "re5et" "terminalparty" "peepcode" "powerlevel10k/powerlevel10k")
-
-################# POWERLEVEL10K - https://github.com/romkatv/powerlevel10k#getting-started
 
 
 # Set list of themes to pick from when loading at random
@@ -45,7 +49,8 @@ ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "amuse" "arrow" "aussiegeek" "jonath
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "peepcode" "terminalparty" "re5et" "nicoulaj" "nanotech" "juanghurtado" "jonathan" "aussiegeek" "arrow" "amuse")
+ZSH_THEME="random"
+ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "amuse" "arrow" "aussiegeek" "jonathan" "juanghurtado" "nanotech" "nicoulaj" "re5et" "terminalparty" "peepcode" "powerlevel10k/powerlevel10k")
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -123,13 +128,9 @@ plugins=(
 )
 
 
-################# AUTO SUGGESTION https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-
-################# SYNTAC-highlighting https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-
-zstyle :omz:plugins:ssh-agent agent-forwarding yes
+# zstyle :omz:plugins:ssh-agent agent-forwarding yes
 # zstyle :omz:plugins:ssh-agent helper ksshaskpass
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/alpine_github
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/<key>
 
 # zstyle :omz:plugins:ssh-agent lazy yes
 # zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -141,10 +142,10 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs )
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # POWERLEVEL9K_STATUS_VERBOSE=false
-# # POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-# # POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 # DEFAULT_USER=$USER
-# # POWERLEVEL9K_TIME_FORMAT="%D{%Y.%m.%d @ %H:%M:%S}"
+# POWERLEVEL9K_TIME_FORMAT="%D{%Y.%m.%d @ %H:%M:%S}"
 # POWERLEVEL9K_TIME_FORMAT="\uf073 %D{%Y.%m.%d \uf017 %H:%M:%S}"
 # POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
 # POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
@@ -185,35 +186,6 @@ source $ZSH/oh-my-zsh.sh
 # export PATH="/usr/local/sbin:$PATH"
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
 
-# export JENV_SHELL=zsh
-# export JENV_LOADED=1
-# unset JAVA_HOME
-# # #source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
-# jenv rehash 2>/dev/null
-# jenv refresh-plugins
-# jenv() {
-#   typeset command
-#   command="$1"
-#   if [ "$#" -gt 0 ]; then
-#     shift
-#   fi
-
-#   case "$command" in
-#   enable-plugin|rehash|shell|shell-options)
-#     eval `jenv "sh-$command" "$@"`;;
-#   *)
-#     command jenv "$command" "$@";;
-#   esac
-# }
-# export PATH="$HOME/.jenv/bin:$PATH"
-# eval "$(jenv init -)"
-
-# export JENV_SHELL=zsh
-# export JENV_LOADED=1
-# unset JAVA_HOME
-# # #source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
-# jenv rehash 2>/dev/null
-# jenv refresh-plugins
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
