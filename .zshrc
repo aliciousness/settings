@@ -126,14 +126,15 @@ plugins=(
     history 
     python 
     pip 
-    ssh-agent 
-    thefuck
+    ssh-agent
 )
 
 
 # zstyle :omz:plugins:ssh-agent agent-forwarding yes
 # zstyle :omz:plugins:ssh-agent helper ksshaskpass
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/<key>
+
+# Uncomment when you want to automatically add ssh key to identy
+# zstyle :omz:plugins:ssh-agent identities ~/.ssh/<key>
 
 # zstyle :omz:plugins:ssh-agent lazy yes
 # zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -173,9 +174,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/bitbucket"
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -193,4 +191,5 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval $(thefuck --alias)
+# Visual Studio Code
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
