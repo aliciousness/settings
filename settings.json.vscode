@@ -1,0 +1,47 @@
+# vs code settings.json
+{
+    "workbench.tree.renderIndentGuides": "always",
+    "yaml.schemas": {
+        "file:///Users/richard.craddock/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "remote.SSH.remotePlatform": {
+        "ansible": "linux",
+        "Ansible": "linux"
+    },
+    "redhat.telemetry.enabled": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#2845af",
+        "statusBar.noFolderBackground": "#2845af",
+        "statusBar.foreground": "#ffffff"
+    },
+    "files.autoSave": "onFocusChange",
+    "ansible.ansible.useFullyQualifiedCollectionNames": false,
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "editor.suggest.showStatusBar": true,
+    "atlascode.jira.statusbar.enabled": false,
+    "atlascode.jira.statusbar.showActiveIssue": false,
+    "atlascode.jira.statusbar.showLogin": false,
+    "atlascode.jira.statusbar.showProduct": false,
+    "atlascode.jira.statusbar.showUser": false,
+    "docker.contexts.showInStatusBar": true,
+    "problems.showCurrentInStatus": true,
+    "editor.indentSize": "tabSize",
+    "activitusbar.alignment": "Right",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.autofetch": true,
+    "git.openRepositoryInParentFolders": "always",
+    "debug.showInStatusBar": "never",
+    "atlascode.bitbucket.statusbar.enabled": false,
+    "atlascode.bitbucket.statusbar.showLogin": false,
+    "atlascode.bitbucket.statusbar.showProduct": false,
+    "atlascode.bitbucket.statusbar.showUser": false,
+    "workspaceInStatusBar.alignment": "right",
+    "workspaceInStatusBar.uppercase": true,
+    "editor.codeLens": false,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "terminal.integrated.defaultProfile.linux": "",
+    "editor.codeActionsOnSave": {},
+    "terminal.integrated.defaultProfile.osx": "zsh",
+}
