@@ -134,13 +134,24 @@ export SSH_KEY_PATH="<placeholder>"
 alias ll="ls -al"
 alias ghcpe="gh copilot explain"
 alias ghcps="gh copilot suggest"
+alias prmaster="gh pr create --base master --head"
+alias prmain="gh pr create --base main --head"
 alias send="wormhole send"
 alias reload="omz reload"
-alias vi="vim +'set ic'"
+alias vi="vim +'set ic'"    # set non strict casing for search with vim
 alias commit="git commit -am"
+alias push="gpsup"
+alias awslogin="aws sso login --sso-session=my-sso"
+alias undo='git reset --soft HEAD~1'    # Undo the last commit
+alias pop='git stash pop' # pop the latest stash of files
+alias stash='git stash' # stash changed files
+alias ghist='git log --graph --oneline --all' # colorful history tree
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Add Visual Studio Code (code)
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+# This is where I add custom scripts my PATH to run this globally
+export PATH="/Users/richard.craddock/.deno/bin:$PATH"
