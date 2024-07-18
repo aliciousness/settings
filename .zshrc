@@ -86,8 +86,6 @@ plugins=(
     aliases
     copypath
     history
-    python
-    pip
     ssh-agent
 )
 
@@ -104,18 +102,7 @@ zstyle :omz:plugins:ssh-agent identities <placeholder>
 # zstyle :omz:plugins:ssh-agent ssh-add-args -K -c -a /run/user/1000/ssh-auth
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\uE0B0"
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs )
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-# POWERLEVEL9K_STATUS_VERBOSE=false
-# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-# POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-# DEFAULT_USER=$USER
-# POWERLEVEL9K_TIME_FORMAT="%D{%Y.%m.%d @ %H:%M:%S}"
-# POWERLEVEL9K_TIME_FORMAT="\uf073 %D{%Y.%m.%d \uf017 %H:%M:%S}"
-# POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-# POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-# POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,20 +119,45 @@ export SSH_KEY_PATH="<placeholder>"
 
 ############ aliases
 alias ll="ls -al"
+
+# Github
 alias ghcpe="gh copilot explain"
 alias ghcps="gh copilot suggest"
 alias prmaster="gh pr create --base master --head"
 alias prmain="gh pr create --base main --head"
+
+# wormhole
 alias send="wormhole send"
+alias recieve="wormhole recieve"
+
+# Ohmyzsh
 alias reload="omz reload"
+
+# VIM
 alias vi="vim +'set ic'"    # set non strict casing for search with vim
+
+# AWS
+alias awslogin="aws sso login --sso-session=my-sso"
+
+# GIT
 alias commit="git commit -am"
 alias push="gpsup"
-alias awslogin="aws sso login --sso-session=my-sso"
+# copy Git current branch to clipboard
+alias gcb="git branch | grep \* | cut -c 3- | tr -d '\n' | pbcopy"
 alias undo='git reset --soft HEAD~1'    # Undo the last commit
 alias pop='git stash pop' # pop the latest stash of files
 alias stash='git stash' # stash changed files
 alias ghist='git log --graph --oneline --all' # colorful history tree
+
+# iterm2
+alias iterm2_tab_color_red='echo -e "\033]6;1;bg;red;brightness;255\a"'
+alias iterm2_tab_color_green='echo -e "\033]6;1;bg;green;brightness;255\a"'
+alias iterm2_tab_color_default='echo -e "\033]6;1;bg;*;default\a"'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
