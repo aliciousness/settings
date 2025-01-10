@@ -150,9 +150,6 @@ alias hist='git log --graph --oneline --all' # git colorful history tree
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Add Visual Studio Code (code)
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
 # activate python virtual environment
 ## Inhouse Python tools
 source $HOME/code/tools/venv/bin/activate
