@@ -161,8 +161,8 @@ export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
 
 # activate python virtual environment
 ## Inhouse Python tools
-source $HOME/code/tools/personal/venv/bin/activate
-export PATH=$HOME/code/tools/personal/bin:$PATH
+source $HOME/code/tools/venv/bin/activate
+export PATH=$HOME/code/tools/bin:$PATH
 
 # JS
 export NVM_DIR="$HOME/.nvm"
