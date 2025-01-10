@@ -111,59 +111,69 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="<placeholder>"
 
+# fzf
+source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
+#
 ############ aliases
-alias ll="ls -al"
-
-# Github
+alias cat='bat -n -A'
+alias fls='ls $(fzf --preview "bat --color=always --style=numbers --line-range=:500 {}")'
 alias ghcpe="gh copilot explain"
 alias ghcps="gh copilot suggest"
+
+# GH workflow alias can get more information from here https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/manually-running-a-workflow
+alias workflow="gh workflow run" # To run a GitHub workflow in the cli ie. workflow WORKFLOW.yml --ref BRANCH 
+alias ghwatch="gh run watch" # watch a workflow 
+
 alias prmaster="gh pr create --base master --head"
 alias prmain="gh pr create --base main --head"
-
-# wormhole
+alias pr="gh pr"
 alias send="wormhole send"
-alias recieve="wormhole recieve"
-
-# Ohmyzsh
 alias reload="omz reload"
-
-# VIM
 alias vi="vim +'set ic'"    # set non strict casing for search with vim
-
-# AWS
 alias awslogin="aws sso login --sso-session=my-sso"
-
-# GIT
+alias tfdocs="terraform-docs" # short hand for terraform-docs
+alias copy="it2copy" # iterm2 shortcut to copy to pasteboard pass in the file name
 alias commit="git commit -am"
-alias push="gpsup"
-# copy Git current branch to clipboard
-alias gcb="git branch | grep \* | cut -c 3- | tr -d '\n' | pbcopy"
+alias push="gpsup" # git push origin whatever branch you are on 
 alias undo='git reset --soft HEAD~1'    # Undo the last commit
+alias reset='git reset --hard' # reset back to the commit hash you choose
 alias pop='git stash pop' # pop the latest stash of files
 alias stash='git stash' # stash changed files
-alias ghist='git log --graph --oneline --all' # colorful history tree
-
-# iterm2
-alias iterm2_tab_color_red='echo -e "\033]6;1;bg;red;brightness;255\a"'
-alias iterm2_tab_color_green='echo -e "\033]6;1;bg;green;brightness;255\a"'
-alias iterm2_tab_color_default='echo -e "\033]6;1;bg;*;default\a"'
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+alias hist='git log --graph --oneline --all' # git colorful history tree
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Add Visual Studio Code (code)
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-# This is where I add custom scripts my PATH to run this globally
-export PATH="/Users/richard.craddock/.deno/bin:$PATH"
+# Nodejs for Ma
+# For compilers to find node@20 you may need to set:
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/node@20/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
+
+# activate python virtual environment
+## Inhouse Python tools
+source $HOME/code/tools/personal/venv/bin/activate
+export PATH=$HOME/code/tools/personal/bin:$PATH
+
+# JS
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# To disable the creation of ._ files when using tar on macOS
+export COPYFILE_DISABLE=1
+
+# Iterm for mac
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
