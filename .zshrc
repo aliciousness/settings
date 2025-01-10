@@ -122,7 +122,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # For a full list of active aliases, run `alias`.
 #
 ############ aliases
-alias cat='bat -n -A'
+alias cat='batcat -n -A'
 alias fls='ls $(fzf --preview "bat --color=always --style=numbers --line-range=:500 {}")'
 alias ghcpe="gh copilot explain"
 alias ghcps="gh copilot suggest"
@@ -153,27 +153,12 @@ alias hist='git log --graph --oneline --all' # git colorful history tree
 # Add Visual Studio Code (code)
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-# Nodejs for Ma
-# For compilers to find node@20 you may need to set:
-export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/node@20/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
-
 # activate python virtual environment
 ## Inhouse Python tools
-source $HOME/code/tools/personal/venv/bin/activate
-export PATH=$HOME/code/tools/personal/bin:$PATH
+source $HOME/code/tools/venv/bin/activate
+export PATH=$HOME/code/tools/bin:$PATH
 
 # JS
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# To disable the creation of ._ files when using tar on macOS
-export COPYFILE_DISABLE=1
-
-# Iterm for mac
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
